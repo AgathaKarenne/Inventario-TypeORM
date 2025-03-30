@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                   // Define o padrão de ECMAScript para a compilação. ES2020 oferece boas funcionalidades.
+    "module": "commonjs",                  // Usado para módulos em Node.js.
+    "moduleResolution": "node",            // Como resolver os módulos, o 'node' ajuda a resolver módulos baseados no Node.js.
+    "lib": ["es2020"],                     // Especifica quais bibliotecas globais estarão disponíveis.
+    "experimentalDecorators": true,        // Habilita o suporte a decorators, útil para frameworks como TypeORM.
+    "emitDecoratorMetadata": true,         // Gera metadados de decorators (requerido por TypeORM).
+    "strict": true,                        // Habilita todas as opções de checagem estrita de tipos.
+    "esModuleInterop": true,               // Habilita interoperabilidade entre módulos ES6 e CommonJS.
+    "skipLibCheck": true,                  // Ignora a verificação de tipos nas bibliotecas, ajudando a reduzir o tempo de compilação.
+    "forceConsistentCasingInFileNames": true, // Garante que o nome dos arquivos seja consistente entre maiúsculas e minúsculas.
+    "outDir": "./dist",                    // Diretório onde os arquivos JavaScript compilados serão armazenados.
+    "rootDir": "./src",                    // Define o diretório raiz do código fonte.
+    "baseUrl": "./",                       // Define a base para a resolução de módulos, útil para caminhos relativos.
+    "paths": {                             // Configuração de caminhos personalizados.
+      "*": ["node_modules/*", "src/types/*"]
+    },
+    "resolveJsonModule": true,              // Permite importar arquivos JSON como módulos.
+    "skipDefaultLibCheck": true,            // Ignora a verificação do arquivo 'lib.d.ts' padrão.
+    "declaration": true,                    // Gera arquivos '.d.ts' para todos os arquivos '.ts' (útil para bibliotecas).
+    "declarationMap": true,                 // Gera arquivos de mapeamento de declaração.
+    "sourceMap": true,                      // Gera arquivos de mapa de fonte para depuração.
+    "inlineSourceMap": false,               // Não inline os mapas de fonte dentro dos arquivos compilados.
+    "noImplicitAny": true,                  // Garante que o TypeScript não aceite o tipo 'any' implícito.
+    "noImplicitThis": true,                 // Garante que 'this' tenha um tipo explícito.
+    "noUnusedLocals": true,                 // Garante que não existam variáveis locais não utilizadas.
+    "noUnusedParameters": true,             // Garante que não existam parâmetros não utilizados nas funções.
+    "noFallthroughCasesInSwitch": true,     // Garante que não haja casos de fallthrough nos switch statements.
+    "strictNullChecks": true                // Garante checagem rigorosa de valores nulos e indefinidos.
+  },
+  "include": [
+    "src/**/*.ts"                           // Incluir todos os arquivos TypeScript dentro da pasta src.
+  ],
+  "exclude": [
+    "node_modules",                         // Exclui a pasta node_modules para evitar compilar dependências.
+    "dist"                                  // Exclui a pasta dist para evitar compilar os arquivos compilados.
+  ],
+  "compileOnSave": true,                    // Permite compilar automaticamente os arquivos ao salvar.
+  "build": {
+    "incremental": true                     // Ativa compilação incremental para acelerar o processo de build em builds subsequentes.
+  }
+}
+
+
+
+
+
